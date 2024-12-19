@@ -1,6 +1,5 @@
 <script setup lang="ts">
   import { placeholderLoading } from '@/utils/placeholder-loading'
-
   placeholderLoading()
 </script>
 

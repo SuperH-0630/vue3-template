@@ -1,9 +1,5 @@
 export function getEnv() {
-  const env = import.meta.env
-  if (env.VITE_ASSETS_BASE && typeof env.VITE_ASSETS_BASE === 'string' && !/^http/.test(env.VITE_ASSETS_BASE)) {
-    env.VITE_ASSETS_BASE = window.location.origin + env.VITE_ASSETS_BASE
-  }
-  return env
+  return import.meta.env
 }
 
 /**

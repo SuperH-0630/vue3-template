@@ -41,6 +41,13 @@ export const average = (arr: number[]) => arr.reduce((a, b) => a + b) / arr.leng
 export const isMobile = (phone: string) => /^1[0-9]{10}$/.test(phone)
 
 /**
+ * 是否是合法邮箱
+ * @param email
+ * @returns {boolean}
+ */
+export const isEmail = (email: string) => /^.+@.+\..+$/i.test(email)
+
+/**
  * 获取滚动的坐标
  * @param {Window} el
  * @returns {{x : any, y : any}}
@@ -65,4 +72,8 @@ export const scrollToTop = () => {
     window.requestAnimationFrame(scrollToTop)
     window.scrollTo(0, c - c / 8)
   }
+}
+
+export function maskPhoneNumber(phoneNumber: string) {
+  return phoneNumber.replace(/^(\d{3})\d{4}(\d{4})$/, '$1****$2');
 }
